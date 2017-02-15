@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+    <h3 class="text-center">Edit "<strong><%= todo.name %></strong>"</h3>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form action="/todo/<%= todo._id%>?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <label>Title:</label>    
+                        <input class="form-control" type="text" name="todo[name]" value="<%= todo.name %>">
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <input class="form-control" type="text" name="todo[description]" value="<%= todo.description %>">
+                    </div>
+                    <input class="btn btn-success btn-block" type="submit">
+                </form>
+                <a class="btn btn-primary" href="/todo" role="button">Go Back</a>
+            </div>
+        </div>
+    </div>
+    
+    <!--<p>Title: <%= todo.name %></p>-->
+    <!--<p>Description: <%= todo.description %></p>-->
+    
+<% include ./partials/footer %>
